@@ -1,0 +1,48 @@
+AWS_ACCESS_KEY_ID = "xxx"           # AWS access key for authentication
+AWS_SECRET_ACCESS_KEY = "xxx"       # AWS secret key for authentication
+aws_region = "xxx"                  # AWS region where resources will be created
+application_name = "xxx"            # Name of the Elastic Beanstalk application
+application_description = "xxxx"    # Description of the Elastic Beanstalk application
+environment_name = "xxxx"           # Name of the Elastic Beanstalk environment
+
+
+#VPC Settings
+vpc_id = "xxx"                      # ID of the VPC where resources will be deployed
+instance_subnets = ["xxx", "xxx", "xxx", "xxx", "xxx", "xxx"]  # List of subnet IDs for EC2 instances
+elb_subnets = ["xxx","xxx","xxx","xxx","xxx","xxx"]  # List of subnet IDs for the Elastic Load Balancer
+
+
+#Instance Settings
+instance_type = "xxx"               # EC2 instance type for the Elastic Beanstalk environment
+min_instance_count = x              # Minimum number of EC2 instances in the Auto Scaling group
+max_instance_count = x              # Maximum number of EC2 instances in the Auto Scaling group
+security_groups = ["xxx"]           # List of security group IDs to associate with EC2 instances
+# Ensure these security groups allow necessary inbound/outbound traffic
+
+artifact_bucket_name = "xxx"        # Name of the S3 bucket to store CodePipeline artifacts
+# Use a globally unique name for the S3 bucket
+pipeline_name = "xxx"               # Name of the CodePipeline
+
+bitbucket_repo = "xxx/xxx"          # Bitbucket repository details (format: username/repo-name)
+# Ensure the CodeStar connection has access to this repository
+
+bitbucket_branch = "xxx"            # Branch name in the Bitbucket repository to deploy from
+# Consider using different branches for different environments (e.g., main for prod, develop for staging)
+
+# Existing IAM roles
+eb_instance_profile = "xxx"         # ARN of the IAM instance profile for Elastic Beanstalk EC2 instances
+# Ensure this profile has the necessary permissions for your application to function
+
+eb_service_role = "xxxx"            # ARN of the IAM service role for Elastic Beanstalk
+# This role should have permissions to manage resources on behalf of Elastic Beanstalk
+
+codepipeline_role_arn = "xxxx"      # ARN of the IAM role for CodePipeline
+# Ensure this role has permissions to access all resources needed in your pipeline
+
+bitbucket_connection_arn = "xxxx"   # ARN of the CodeStar connection to Bitbucket
+# Set up this connection in the AWS Console if you haven't already
+
+# API Environment Variables
+api_environment_variables = { 
+    
+}
